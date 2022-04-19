@@ -1,0 +1,37 @@
+
+    <div>
+    <label>Mars Rover Name: </label><br>
+    
+    <select [(ngModel)]= "rover">
+      <option [ngValue] = "null" selected disabled>Select Rover Name: </option>
+      <option *ngFor= "let rover of rovers" [value]= 'rover'>{{rover}}</option>
+    </select>
+    <br>
+    <br>
+
+    <label>Mars Rover Camera: </label><br>
+    <select *ngIf= "rover" [(ngModel)]= "camera" [value]= 'camera'>
+      <option [ngValue] = 'null' selected disabled>Select Rover Camera: </option>
+      <option *ngFor= "let camera of cameras" [value]= 'camera.shortName'>{{camera.fullName}}</option>
+    </select>
+    <br>
+
+  <br>
+  <br>
+  <label>Earth date: </label>
+  <input type="date" [(ngModel)]= "selectedDate"/>
+  <br>
+  <br>
+
+  <button name = 'submitButton' (click)= "getImages()">Show Images</button>
+
+</div>
+  <label for = 'resultMessage'>{{resultMessage}}</label>
+
+<div>
+  <img *ngFor= "let image of images" src = {{image}}/>
+
+
+</div>
+
+  
