@@ -1,37 +1,46 @@
+<head>
+  <link rel="stylesheet" href="mars-rover-photos.component.scss" />
+</head>
 
-    <div>
-    <label>Mars Rover Name: </label><br>
-    
-    <select [(ngModel)]= "rover">
-      <option [ngValue] = "null" selected disabled>Select Rover Name: </option>
-      <option *ngFor= "let rover of rovers" [value]= 'rover'>{{rover}}</option>
-    </select>
-    <br>
-    <br>
+  <div class = "selectorFbox">
+    <div class = "nameSel">
 
-    <label>Mars Rover Camera: </label><br>
-    <select *ngIf= "rover" [(ngModel)]= "camera" [value]= 'camera'>
-      <option [ngValue] = 'null' selected disabled>Select Rover Camera: </option>
-      <option *ngFor= "let camera of cameras" [value]= 'camera.shortName'>{{camera.fullName}}</option>
-    </select>
-    <br>
+      <label> Select Mars Rover Name: </label><br>
+      <!--ngModel is two way binding - able to display a data property and update the property when user makes changes to it-->
+      <select style = 'background-color: rgba(206, 63, 52, 0.562);' [(ngModel)]= "rover">
+        <option [ngValue] = "null" selected disabled>Select Rover Name: </option>
+        <option *ngFor= "let rover of rovers" [value]= 'rover'>{{rover}}</option>
+      </select>
 
-  <br>
-  <br>
-  <label>Earth date: </label>
-  <input type="date" [(ngModel)]= "selectedDate"/>
-  <br>
-  <br>
+    </div>
 
-  <button name = 'submitButton' (click)= "getImages()">Show Images</button>
-
-</div>
-  <label for = 'resultMessage'>{{resultMessage}}</label>
-
-<div>
-  <img *ngFor= "let image of images" src = {{image}}/>
+    <div class = "camSel">
+      <label> Select Mars Rover Camera: </label><br>
+      <select style = 'background-color: rgba(206, 63, 52, 0.562);' *ngIf= "rover" [(ngModel)]= "camera" [value]= 'camera'>
+        <option [ngValue] = 'null' selected disabled>Select Rover Camera: </option>
+        <option *ngFor= "let camera of cameras" [value]= 'camera.shortName'>{{camera.fullName}}</option>
+      </select>
+    </div>
 
 
-</div>
+    <div class = "dateSel">
+      <label> Select Earth date: </label><br>
+        <input style = 'background-color: rgba(206, 63, 52, 0.562);' type="date" [(ngModel)]= "selectedDate"/>
+      <br>
+      <br> 
+    </div>
+  </div>
+
+  <div class = "subButton">
+    <button class = "buttonDec" name = 'submitButton' (click)= "getImages()">Show Images</button>
+  </div>
+  
+  <div style = "text-align: center; font-family: 'Courier New', monospace;">
+    <label class = 'resultLabel' for = 'resultMessage'>{{resultMessage}}</label>
+  </div>
+
+  <div class = "imageFbox">
+    <img *ngFor= "let image of images" src = {{image}}/> 
+  </div>
 
   

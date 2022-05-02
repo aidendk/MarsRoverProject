@@ -40,6 +40,7 @@ export class MarsRoverPhotosComponent implements OnInit{
   // Get list of available rovers for dropdown menu
   get rovers(): string[] {
     return Array.from(this.roverMap.keys())
+    //.keys are rover names in map array
   }
 
   // Get list of available cameras for selected rover
@@ -48,6 +49,7 @@ export class MarsRoverPhotosComponent implements OnInit{
       return [];
     }
     return this.roverMap.get(this.rover);
+    //using roverMap array to get cameras using rover name as key
   }
 
   // collection of image URLs from NASA api
@@ -74,6 +76,7 @@ export class MarsRoverPhotosComponent implements OnInit{
       if (data.photos.length == 0) {
         this.resultMessage = 'No images found. Please try different values';
       } else {
+        // CurrentPhoto local, used in funct
         data.photos.forEach(currentPhoto =>  {
           this.images.push(currentPhoto.img_src);
         });

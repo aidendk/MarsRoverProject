@@ -1,0 +1,45 @@
+
+.selectorFbox {
+    display: flex;
+    height: 100px;
+    justify-content: space-around;
+    text-align: center;
+    
+}
+
+.nameSel {
+    font-size: large;
+    font-family: 'Courier New', monospace;
+
+}
+
+.camSel {
+    font-size: large;
+    font-family: 'Courier New', monospace;
+}
+
+.dateSel {
+    font-size: large;
+    font-family: 'Courier New', monospace;
+    
+}
+
+.subButton {
+    margin: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttonDec {
+    font-family: 'Courier New', monospace;
+    font-size: large;
+    background-color: rgba(206, 63, 52, 0.562);
+}
+
+.imageFbox {
+    margin: 20px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+
+}
